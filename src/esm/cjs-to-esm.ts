@@ -72,12 +72,10 @@ const replaceExportImportDeclarations = async (content: string, sourceFile: stri
 	}
 };
 
-
 const replaceDirname = (content: string): string => {
-	return content.replaceAll(/__dirname/g, "import.meta.dirname")
-		.replaceAll(/__filename/g, "import.meta.filename");
+	return content.replaceAll(/(?<!\))__dirname(?!\()/g, "import.meta.dirname")
+		.replaceAll(/(?<!\))__filename(?!\()/g, "import.meta.filename");
 }
-
 
 const replaceDeclarations = async (content: string, sourceFile: string): Promise<string> => {
 	return await replaceInlineImports(
