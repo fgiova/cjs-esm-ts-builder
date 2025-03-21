@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/fgiova/cjs-esm-ts-builder/compare/1.1.0...1.1.1) (2025-03-21)
+
+
+### Bug Fixes
+
+* Fix regex for replace ([c3c9970](https://github.com/fgiova/cjs-esm-ts-builder/commit/c3c99700e41c2dd3d4c3539317e504ffa8de95c7))
+
 # [1.1.0](https://github.com/fgiova/cjs-esm-ts-builder/compare/1.0.0...1.1.0) (2025-03-21)
 
 
