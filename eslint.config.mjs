@@ -1,19 +1,16 @@
 import _import from "eslint-plugin-import";
 import tseslint from "typescript-eslint";
 import preferArrow from "eslint-plugin-prefer-arrow";
-import { fixupPluginRules } from "@eslint/compat";
+import stylisticJs from "@stylistic/eslint-plugin-js"
+import { fixupPluginRules, includeIgnoreFile } from "@eslint/compat";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import js from "@eslint/js";
-import { FlatCompat } from "@eslint/eslintrc";
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-  recommendedConfig: js.configs.recommended,
-  allConfig: js.configs.all,
-});
+
+const gitignorePath = path.resolve(__dirname, ".gitignore");
 
 export default [
   ...[...tseslint.configs.recommended].map((conf) => ({
@@ -21,11 +18,13 @@ export default [
     files: ["src/**/*.ts"],
     ignores: ["dist/**/*.*", "node_modules/*", "**/*.js"],
   })),
+  includeIgnoreFile(gitignorePath),
   {
     files: ["src/**/*.ts"],
     ignores: ["dist/**/*.*", "node_modules/*", "**/*.js"],
     plugins: {
       import: fixupPluginRules(_import),
+      "@stylistic/js": stylisticJs,
       "prefer-arrow": preferArrow,
     },
 
@@ -112,6 +111,7 @@ export default [
       ],
       "@typescript-eslint/unbound-method": "off",
       "@typescript-eslint/unified-signatures": "error",
+      "@stylistic/js/eol-last": ["error", "always"],
     },
   },
 ];
