@@ -59,6 +59,7 @@ build(options)
     ...
     "main": "./dist/cjs/index.js",
     "types": "./dist/cjs/index.d.ts",
+    "module": "./dist/esm/index.mjs",
     "exports": {
         ".": {
             "import": {
