@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/fgiova/cjs-esm-ts-builder/compare/1.1.1...1.2.0) (2025-04-08)
+
+
+### Bug Fixes
+
+* Fix package.json and documentation ([6116fd0](https://github.com/fgiova/cjs-esm-ts-builder/commit/6116fd08d355d828b01760342e298481085fa3a9))
+
+
+### Features
+
+* Copy type only files (*.d.ts) into build folders ([7b59cdb](https://github.com/fgiova/cjs-esm-ts-builder/commit/7b59cdb98e2789e58078a744666a3e8d1dc45076))
+
 ## [1.1.1](https://github.com/fgiova/cjs-esm-ts-builder/compare/1.1.0...1.1.1) (2025-03-21)
 
 
